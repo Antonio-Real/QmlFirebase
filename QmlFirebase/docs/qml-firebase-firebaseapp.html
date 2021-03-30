@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- firebaseapp.cpp -->
+  <title>FirebaseApp QML Type | DashboardRPI</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">FirebaseApp QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$FirebaseApp-brief -->
+<p>Type that holds all relevant data related to the Firebase project. <a href="#details">More...</a></p>
+<!-- @@@FirebaseApp -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Firebase 1.0</td></tr></table></div><ul>
+<li><a href="qml-firebase-firebaseapp-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-firebase-firebaseapp.html#apiKey-prop">apiKey</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseapp.html#authDomain-prop">authDomain</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseapp.html#databaseUrl-prop">databaseUrl</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseapp.html#source-prop">source</a></b></b> : url</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseapp.html#storageBucket-prop">storageBucket</a></b></b> : string</li>
+</ul>
+<!-- $$$FirebaseApp-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>The FirebaseApp type holds crucial data from the Firebase project such as API Key or database URL which will then be passed on to <a href="qml-firebase-firebaseauth.html">FirebaseAuth</a> or <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a>. The properties of the Firebase App can be set by downloading the <i>google-services.json</i> file from Firebase and store it in the resources for automatic parsing. An alternative is manually setting the properties in qml:</p>
+<pre class="cpp">FirebaseApp {
+    id: fbApp
+    apiKey: <span class="string">&quot;insert-key&quot;</span>
+    databaseUrl: <span class="string">&quot;insert-url&quot;</span>
+}
+
+FirebaseDatabase {
+    apiKey: fbApp<span class="operator">.</span>apiKey
+    databaseUrl: fbApp<span class="operator">.</span>databaseUrl
+}</pre>
+<p><b>See also </b><a href="qml-firebase-firebaseauth.html">FirebaseAuth</a>, <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a>, and <a href="qml-firebase-firebaseuser.html">FirebaseUser</a>.</p>
+<!-- @@@FirebaseApp -->
+<h2>Property Documentation</h2>
+<!-- $$$apiKey -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="apiKey-prop">
+<td class="tblQmlPropNode"><p>
+<a name="apiKey-prop"></a><span class="name">apiKey</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the API Key of the Firebase project, used by the types <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a> and <a href="qml-firebase-firebaseauth.html">FirebaseAuth</a>.</p>
+</div></div><!-- @@@apiKey -->
+<br/>
+<!-- $$$authDomain -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="authDomain-prop">
+<td class="tblQmlPropNode"><p>
+<a name="authDomain-prop"></a><span class="name">authDomain</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Domain of the authentication, currently not used.</p>
+</div></div><!-- @@@authDomain -->
+<br/>
+<!-- $$$databaseUrl -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="databaseUrl-prop">
+<td class="tblQmlPropNode"><p>
+<a name="databaseUrl-prop"></a><span class="name">databaseUrl</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Property that holds the URL where the Firebase Realtime Database resides and should be passed to <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a> objects.</p>
+</div></div><!-- @@@databaseUrl -->
+<br/>
+<!-- $$$source -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="source-prop">
+<td class="tblQmlPropNode"><p>
+<a name="source-prop"></a><span class="name">source</span> : <span class="type">url</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the URL of the google-services.json that contains all information about a Firebase Project (usually obtained in Firebase Console). If this path is set, the file will be parsed and all the other properties will be automatically set.</p>
+</div></div><!-- @@@source -->
+<br/>
+<!-- $$$storageBucket -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storageBucket-prop">
+<td class="tblQmlPropNode"><p>
+<a name="storageBucket-prop"></a><span class="name">storageBucket</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the URL of the Firebase Storage, currently not implemented.</p>
+</div></div><!-- @@@storageBucket -->
+<br/>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- firebaseuser.cpp -->
+  <title>FirebaseUser QML Type | DashboardRPI</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">FirebaseUser QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$FirebaseUser-brief -->
+<p>Type that encapsulate user data for easy access. <a href="#details">More...</a></p>
+<!-- @@@FirebaseUser -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Firebase 1.0</td></tr></table></div><ul>
+<li><a href="qml-firebase-firebaseuser-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#birthdate-prop">birthdate</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#email-prop">email</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#emailVerified-prop">emailVerified</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#idToken-prop">idToken</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#name-prop">name</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#photoUrl-prop">photoUrl</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#profession-prop">profession</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#refreshToken-prop">refreshToken</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-firebaseuser.html#userId-prop">userId</a></b></b> : string</li>
+</ul>
+<!-- $$$FirebaseUser-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>FirebaseUser simply holds data about the users authenticated in the firebase. This type is used by <a href="qml-firebase-firebaseauth.html">FirebaseAuth</a> to hold a reference to the user currently authenticated and can also be used to create models/lists of all available users in the <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a>.</p>
+<!-- @@@FirebaseUser -->
+<h2>Property Documentation</h2>
+<!-- $$$birthdate -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="birthdate-prop">
+<td class="tblQmlPropNode"><p>
+<a name="birthdate-prop"></a><span class="name">birthdate</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Optional field about the user's birthdate.</p>
+</div></div><!-- @@@birthdate -->
+<br/>
+<!-- $$$email -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="email-prop">
+<td class="tblQmlPropNode"><p>
+<a name="email-prop"></a><span class="name">email</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the user's email.</p>
+</div></div><!-- @@@email -->
+<br/>
+<!-- $$$emailVerified -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="emailVerified-prop">
+<td class="tblQmlPropNode"><p>
+<a name="emailVerified-prop"></a><span class="name">emailVerified</span> : <span class="type">bool</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies if the email of this user has already been verified. A verification email can be sent using <a href="qml-firebase-firebaseauth.html#sendEmailVerification-method">FirebaseAuth::sendEmailVerification()</a></p>
+</div></div><!-- @@@emailVerified -->
+<br/>
+<!-- $$$idToken -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="idToken-prop">
+<td class="tblQmlPropNode"><p>
+<a name="idToken-prop"></a><span class="name">idToken</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the users <i>idToken</i>, often used for actions that require authentication such as writing/reading data from the <a href="qml-firebase-firebasedatabase.html">FirebaseDatabase</a> or managing the user profile with <a href="qml-firebase-firebaseauth.html">FirebaseAuth</a>. This token expires after 1 hour and should be refreshed using the <a href="qml-firebase-firebaseuser.html#refreshToken-prop">refreshToken</a>.</p>
+<p><b>Note: </b>for more information about use, see <a href="qml-firebase-firebaseauth.html#currentUser-prop">FirebaseAuth::currentUser</a></p>
+</div></div><!-- @@@idToken -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="name-prop">
+<td class="tblQmlPropNode"><p>
+<a name="name-prop"></a><span class="name">name</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the <i>name</i> of the user.</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$photoUrl -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="photoUrl-prop">
+<td class="tblQmlPropNode"><p>
+<a name="photoUrl-prop"></a><span class="name">photoUrl</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Url that holds the profile picture of the user.</p>
+</div></div><!-- @@@photoUrl -->
+<br/>
+<!-- $$$profession -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="profession-prop">
+<td class="tblQmlPropNode"><p>
+<a name="profession-prop"></a><span class="name">profession</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Optional field about the user's profession.</p>
+</div></div><!-- @@@profession -->
+<br/>
+<!-- $$$refreshToken -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="refreshToken-prop">
+<td class="tblQmlPropNode"><p>
+<a name="refreshToken-prop"></a><span class="name">refreshToken</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the refresh token, tipically used to refresh the <a href="qml-firebase-firebaseuser.html#idToken-prop">idToken</a> after it expires.</p>
+<p><b>Note: </b>for more information about use, see <a href="qml-firebase-firebaseauth.html#exchangeRefreshToken-method">FirebaseAuth::exchangeRefreshToken</a></p>
+</div></div><!-- @@@refreshToken -->
+<br/>
+<!-- $$$userId -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="userId-prop">
+<td class="tblQmlPropNode"><p>
+<a name="userId-prop"></a><span class="name">userId</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the unique identifier of the user in the entire Firebase project.</p>
+<p><b>Warning:</b> this identifier will change if the email of the user is altered.</p>
+</div></div><!-- @@@userId -->
+<br/>
+</body>
+</html>
