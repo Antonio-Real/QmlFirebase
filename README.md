@@ -6,6 +6,12 @@ You can find the much better written [QtFirebase](https://github.com/Larpon/QtFi
 
 By using the REST API instead in conjunction with Qt's powerfull cross platform framework you end up with classes that will work on any system that can run Qt.
 
+### Usage
+1. Download the repository contents into a path of youre choosing.
+2. Add the line `include (<path/to/QmlFirebase>/QmlFirebase.pri)` in your .pro.
+3. Add `import Firebase 1.0` to use the module on your QML files.
+
+
 ### Features implemented
 - Ability to signup/signin and update/delete the firebase user profile.
 - Ability to authenticate using a Google account (sometimes doesn't work on some browsers, not entirely sure why).
@@ -20,7 +26,7 @@ By using the REST API instead in conjunction with Qt's powerfull cross platform 
 4. [Qt Firebase REST API](https://github.com/Sriep/Qt_Firebase_REST_API.git) - Main inspiration, works well but doesn't have any QML support (which led to the making of this one).
 
 ### Documentation
-Documentation can be found in the `docs` folder.
+Documentation can be found in [here](https://antonio-real.github.io/QmlFirebase/).
 
 ### Support
 If people use this at all I can continue improving the code (which needs lots of refactoring anyways).
