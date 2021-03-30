@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- googlegateway.cpp -->
+  <title>GoogleGateway QML Type | DashboardRPI</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">GoogleGateway QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$GoogleGateway-brief -->
+<p>Helper for authenticating using a google account. <a href="#details">More...</a></p>
+<!-- @@@GoogleGateway -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Firebase 1.0</td></tr></table></div><ul>
+<li><a href="qml-firebase-googlegateway-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-firebase-googlegateway.html#authToken-prop">authToken</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-firebase-googlegateway.html#clientSecretPath-prop">clientSecretPath</a></b></b> : string</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="qml-firebase-googlegateway.html#fetchGoogleToken-method">fetchGoogleToken</a></b></b>()</li>
+</ul>
+<!-- $$$GoogleGateway-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>This type allows the user to authenticate on the firebase using a google account. By calling the <a href="qml-firebase-googlegateway.html#fetchGoogleToken-method">fetchGoogleToken()</a> a browser window will be opened and the user can log in. After the login is complete, if successful an <a href="qml-firebase-googlegateway.html#authToken-prop">authToken</a> will be retrieved which can be used with <a href="qml-firebase-firebaseauth.html#signInWithOAuthCredential-method">FirebaseAuth::signInWithOAuthCredential</a>. See example below:</p>
+<pre class="cpp">FirebaseApp {
+    id: fbApp
+    apiKey: <span class="string">&quot;insert-key&quot;</span>
+    databaseUrl: <span class="string">&quot;insert-url&quot;</span>
+}
+
+FirebaseAuth {
+    id: fbAuth
+    apiKey: fbApp<span class="operator">.</span>apiKey
+    onSignedIn: <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+}
+
+GoogleSignInHelper {
+    id: googleSignIn
+
+    onAuthTokenChanged: {
+        console<span class="operator">.</span>log(<span class="string">&quot;Token granted:  \n&quot;</span> <span class="operator">+</span> authToken)
+        fbAuth<span class="operator">.</span>signInWithOAuthCredential(authToken<span class="operator">,</span> <span class="string">&quot;google.com&quot;</span>)
+    }
+}
+
+Button {
+    text: <span class="string">&quot;Google login&quot;</span>
+    onClicked: googleSignIn<span class="operator">.</span>fetchGoogleToken()
+}</pre>
+<p><b>See also </b><a href="qml-firebase-firebaseauth.html">FirebaseAuth</a> and <a href="qml-firebase-firebaseapp.html">FirebaseApp</a>.</p>
+<!-- @@@GoogleGateway -->
+<h2>Property Documentation</h2>
+<!-- $$$authToken -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="authToken-prop">
+<td class="tblQmlPropNode"><p>
+<a name="authToken-prop"></a><span class="name">authToken</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Token that can be used for authenticating on the firebase.</p>
+</div></div><!-- @@@authToken -->
+<br/>
+<!-- $$$clientSecretPath -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="clientSecretPath-prop">
+<td class="tblQmlPropNode"><p>
+<a name="clientSecretPath-prop"></a><span class="name">clientSecretPath</span> : <span class="type">string</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the path where the class can find the client_secret.json file to parse information such as client ID, token and redirect URIs, etc.</p>
+</div></div><!-- @@@clientSecretPath -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$fetchGoogleToken[overload1]$$$fetchGoogleToken -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="fetchGoogleToken-method">
+<td class="tblQmlFuncNode"><p>
+<a name="fetchGoogleToken-method"></a><span class="type">void</span> <span class="name">fetchGoogleToken</span>()</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Opens a browser window to sign in with google. If successful, updates the <a href="qml-firebase-googlegateway.html#authToken-prop">authToken</a>.</p>
+</div></div><!-- @@@fetchGoogleToken -->
+<br/>
+</body>
+</html>
