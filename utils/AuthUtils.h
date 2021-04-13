@@ -20,6 +20,7 @@ static const QString endpoint_confirmEmailVerification("https://identitytoolkit.
 static const QString endpoint_deleteAccount("https://identitytoolkit.googleapis.com/v1/accounts:delete?key=");
 static const QString endpoint_refreshToken("https://securetoken.googleapis.com/v1/token?key=");
 
+// For showing a clearer message to the user
 static QString parseJSONerror(QString err)
 {
     // Exchange refresh token for ID token

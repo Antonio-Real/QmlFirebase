@@ -382,6 +382,43 @@ void FirebaseAuth::changeEmail(QString idToken, QString newEmail)
     });
 }
 
+void FirebaseAuth::confirmEmailVerification(QString verificationCode)
+{
+    QUrl endpoint = AuthUtils::endpoint_confirmEmailVerification + m_apiKey;
+    QNetworkRequest request(endpoint);
+
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QString data = QString("{\"oobCode\":\"%1\"}").arg(verificationCode);
+
+    QNetworkReply *reply =  m_manager.post(request, data.toUtf8());
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        QByteArray dat = reply->readAll();
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(dat, &err);
+
+        // Check for parsing errors
+        if(err.error == QJsonParseError::NoError) {
+            qDebug().noquote() << "\n RESPONSE: \n" << doc.toJson(QJsonDocument::Indented);
+
+            // Check for reply errors
+            QJsonObject error = doc["error"].toObject();
+            if(!error.isEmpty()){
+                emit errorOcurred(AuthUtils::parseJSONerror(error["message"].toString()));
+            }
+            else {
+                // Nothing to do here, maybe send success message
+            }
+        } else {
+            // If JSON did not parse, likely means a network error
+            emit errorOcurred(reply->errorString());
+        }
+
+        reply->deleteLater();
+    });
+}
+
 /*!
     \qmlmethod void FirebaseAuth::sendPasswordResetEmail(string email)
 
@@ -463,6 +500,80 @@ void FirebaseAuth::changePassword(QString idToken, QString newPassword)
                 m_currentUser->setUserId(doc["localId"].toString());
 
                 emit currentUserChanged();
+            }
+        } else {
+            // If JSON did not parse, likely means a network error
+            emit errorOcurred(reply->errorString());
+        }
+
+        reply->deleteLater();
+    });
+}
+
+void FirebaseAuth::verifyPasswordResetCode(QString verificationCode)
+{
+    QUrl endpoint = AuthUtils::endpoint_verifyPasswordReset + m_apiKey;
+    QNetworkRequest request(endpoint);
+
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QString data = QString("{\"oobCode\":\"%1\"}").arg(verificationCode);
+
+    QNetworkReply *reply =  m_manager.post(request, data.toUtf8());
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        QByteArray dat = reply->readAll();
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(dat, &err);
+
+        // Check for parsing errors
+        if(err.error == QJsonParseError::NoError) {
+            qDebug().noquote() << "\n RESPONSE: \n" << doc.toJson(QJsonDocument::Indented);
+
+            // Check for reply errors
+            QJsonObject error = doc["error"].toObject();
+            if(!error.isEmpty()){
+                emit errorOcurred(AuthUtils::parseJSONerror(error["message"].toString()));
+            }
+            else {
+                // Nothing to do here, maybe send success message
+            }
+        } else {
+            // If JSON did not parse, likely means a network error
+            emit errorOcurred(reply->errorString());
+        }
+
+        reply->deleteLater();
+    });
+}
+
+void FirebaseAuth::confirmPasswordReset(QString verificationCode, QString newPassword)
+{
+    QUrl endpoint = AuthUtils::endpoint_confirmPasswordReset + m_apiKey;
+    QNetworkRequest request(endpoint);
+
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QString data = QString("{\"oobCode\":\"%1\",\"newPassword\":\"%2\"}").arg(verificationCode).arg(newPassword);
+
+    QNetworkReply *reply =  m_manager.post(request, data.toUtf8());
+
+    connect(reply, &QNetworkReply::finished, this, [=]() {
+        QByteArray dat = reply->readAll();
+        QJsonParseError err;
+        QJsonDocument doc = QJsonDocument::fromJson(dat, &err);
+
+        // Check for parsing errors
+        if(err.error == QJsonParseError::NoError) {
+            qDebug().noquote() << "\n RESPONSE: \n" << doc.toJson(QJsonDocument::Indented);
+
+            // Check for reply errors
+            QJsonObject error = doc["error"].toObject();
+            if(!error.isEmpty()){
+                emit errorOcurred(AuthUtils::parseJSONerror(error["message"].toString()));
+            }
+            else {
+                // Nothing to do here, maybe send success message
             }
         } else {
             // If JSON did not parse, likely means a network error

@@ -14,8 +14,6 @@ class FirebaseUser : public QObject
     Q_PROPERTY(QString refreshToken READ refreshToken WRITE setRefreshToken NOTIFY refreshTokenChanged)
     Q_PROPERTY(QString userId READ userId WRITE setUserId NOTIFY userIdChanged)
     Q_PROPERTY(QString photoUrl READ photoUrl WRITE setPhotoUrl NOTIFY photoUrlChanged)
-    Q_PROPERTY(QString profession READ profession WRITE setProfession NOTIFY professionChanged)
-    Q_PROPERTY(QString birthdate READ birthdate WRITE setBirthdate NOTIFY birthdateChanged)
 
 public:
     explicit FirebaseUser(QObject *parent = nullptr);
@@ -41,12 +39,6 @@ public:
     QString photoUrl() const;
     void setPhotoUrl(const QString &photoUrl);
 
-    QString profession() const;
-    void setProfession(const QString &profession);
-
-    QString birthdate() const;
-    void setBirthdate(const QString &birthdate);
-
 signals:
     void nameChanged();
     void emailChanged();
@@ -55,12 +47,9 @@ signals:
     void refreshTokenChanged();
     void userIdChanged();
     void photoUrlChanged();
-    void professionChanged();
-    void birthdateChanged();
 
 private:
-    QString m_name, m_email, m_idToken, m_refreshToken, m_userId,
-    m_photoUrl, m_profession, m_birthdate;
+    QString m_name, m_email, m_idToken, m_refreshToken, m_userId, m_photoUrl;
     bool m_emailVerified = false;
     QNetworkAccessManager m_manager;
 };

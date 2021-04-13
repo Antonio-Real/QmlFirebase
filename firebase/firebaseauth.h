@@ -29,14 +29,14 @@ public slots:
     // Email
     void sendEmailVerification(QString idToken);
     void changeEmail(QString idToken, QString newEmail);
-    //void confirmEmailVerification(QString verificationCode); // TODO
+    void confirmEmailVerification(QString verificationCode);
 
 
     // Password
     void sendPasswordResetEmail(QString email);
     void changePassword(QString idToken, QString newPassword);
-    //void verifyPasswordResetCode(QString verificationCode); // TODO
-    //void confirmPasswordReset(QString verificationCode, QString newPassword); // TODO
+    void verifyPasswordResetCode(QString verificationCode);
+    void confirmPasswordReset(QString verificationCode, QString newPassword);
 
 
     // User data
