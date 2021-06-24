@@ -45,13 +45,11 @@
             <qmlproperty name="databaseUrl" fullname="Firebase.FirebaseDatabase.databaseUrl" href="qml-firebase-firebasedatabase.html#databaseUrl-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
         </qmlclass>
         <qmlclass name="FirebaseUser" qml-module-name="Firebase" fullname="Firebase.FirebaseUser" href="qml-firebase-firebaseuser.html" status="active" access="public" documented="true" title="FirebaseUser" fulltitle="FirebaseUser" subtitle="" groups="Firebase" brief="Type that encapsulate user data for easy access">
-            <qmlproperty name="birthdate" fullname="Firebase.FirebaseUser.birthdate" href="qml-firebase-firebaseuser.html#birthdate-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="email" fullname="Firebase.FirebaseUser.email" href="qml-firebase-firebaseuser.html#email-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="emailVerified" fullname="Firebase.FirebaseUser.emailVerified" href="qml-firebase-firebaseuser.html#emailVerified-prop" status="active" access="public" documented="true" type="bool" attached="false" writable="true"/>
             <qmlproperty name="idToken" fullname="Firebase.FirebaseUser.idToken" href="qml-firebase-firebaseuser.html#idToken-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="name" fullname="Firebase.FirebaseUser.name" href="qml-firebase-firebaseuser.html#name-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="photoUrl" fullname="Firebase.FirebaseUser.photoUrl" href="qml-firebase-firebaseuser.html#photoUrl-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
-            <qmlproperty name="profession" fullname="Firebase.FirebaseUser.profession" href="qml-firebase-firebaseuser.html#profession-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="refreshToken" fullname="Firebase.FirebaseUser.refreshToken" href="qml-firebase-firebaseuser.html#refreshToken-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
             <qmlproperty name="userId" fullname="Firebase.FirebaseUser.userId" href="qml-firebase-firebaseuser.html#userId-prop" status="active" access="public" documented="true" type="string" attached="false" writable="true"/>
         </qmlclass>
