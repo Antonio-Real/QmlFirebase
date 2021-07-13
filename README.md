@@ -6,6 +6,9 @@ You can find the much better written [QtFirebase](https://github.com/Larpon/QtFi
 
 By using the REST API instead in conjunction with Qt's powerfull cross platform framework you end up with classes that will work on any system that can run Qt.
 
+### Dependencies
+- [Qt Network Authorization module](https://doc.qt.io/qt-5/qtnetworkauth-index.html)
+
 ### Usage
 1. Download the repository contents into a path of youre choosing.
 2. Add the line `include (<path/to/QmlFirebase>/QmlFirebase.pri)` in your .pro.
